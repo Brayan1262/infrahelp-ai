@@ -1,10 +1,13 @@
 from fastapi import FastAPI
+from app.api.dataset import router as dataset_router
 
 app = FastAPI(
     title="InfraHelp AI",
     description="API de IA para análisis de tickets de soporte técnico e infraestructura TI.",
     version="1.0.0"
 )
+
+app.include_router(dataset_router)
 
 @app.get("/")
 def read_root():

@@ -1,0 +1,81 @@
+description,category,priority,possible_cause,recommended_steps
+"No tengo internet en mi computadora pero el WiFi aparece conectado",REDES,MEDIUM,Falla de asignación de IP,Reiniciar el router;Renovar IP en el equipo;Verificar DNS
+"No hay acceso a la VPN corporativa desde casa",REDES,HIGH,Certificado expirado o bloqueo de ISP,Renovar certificado;Cambiar puerto de conexión;Verificar log de firewall
+"Latencia muy alta al acceder al ERP",REDES,MEDIUM,Saturación de ancho de banda,Monitorear tráfico de red;Bloquear descargas no autorizadas;Aplicar QoS
+"Pérdida de paquetes constante hacia el servidor principal",REDES,HIGH,Cable de red defectuoso o puerto de switch dañado,Reemplazar cable UTP;Cambiar puerto en el switch;Verificar velocidad del enlace
+"Los teléfonos IP no registran extensión",REDES,CRITICAL,Caída de PBX o VLAN de voz inaccesible,Reiniciar PBX;Verificar switch principal;Revisar configuración DHCP
+"No se pueden resolver nombres de dominio internos",REDES,HIGH,Servidor DNS caído,Verificar servicio DNS;Reiniciar servicio de red;Configurar DNS secundario
+"Falla conexión WiFi en sala de reuniones",REDES,MEDIUM,Access Point desconectado,Verificar PoE del Access Point;Reiniciar AP;Verificar cableado estructurado
+"Intermitencia en el acceso a la DMZ",REDES,HIGH,Reglas de firewall inconsistentes,Revisar reglas del firewall;Verificar logs de bloqueo;Ajustar políticas de seguridad
+"No puedo ingresar al servidor de archivos compartido",WINDOWS_SERVER,HIGH,Servicio SMB detenido o permisos revocados,Verificar permisos de Active Directory;Reiniciar servicio SMB;Revisar espacio en disco
+"Directorio Activo no replica controladores de dominio",WINDOWS_SERVER,CRITICAL,Falla de red entre servidores o error de sincronización de tiempo,Verificar conexión de red;Resincronizar tiempo con NTP;Forzar replicación manualmente
+"Servidor web IIS muestra error 503",WINDOWS_SERVER,HIGH,App Pool detenido,Iniciar Application Pool;Revisar visor de eventos;Verificar uso de memoria
+"Error de acceso denegado en carpeta departamental",WINDOWS_SERVER,MEDIUM,Políticas GPO mal aplicadas,Forzar gpupdate;Revisar permisos NTFS;Verificar membresía de grupo
+"La unidad de red mapeada desapareció",WINDOWS_SERVER,LOW,Script de inicio de sesión no ejecutado,Ejecutar script manualmente;Revisar conectividad;Remapear unidad de red
+"El servidor se reinició inesperadamente anoche",WINDOWS_SERVER,HIGH,Actualizaciones automáticas aplicadas o corte de energía,Verificar visor de eventos;Revisar política de Windows Update;Verificar logs del UPS
+"Alerta de disco C casi lleno en controlador de dominio",WINDOWS_SERVER,CRITICAL,Acumulación de logs y temporales,Eliminar archivos temporales;Purgar logs antiguos;Expandir disco virtual
+"Error de confianza entre estaciones y el dominio",WINDOWS_SERVER,HIGH,Desincronización de cuenta de equipo,Desunir y volver a unir el equipo al dominio;Resetear cuenta de computadora;Verificar conexión al DC
+"La impresora no responde desde mi equipo",IMPRESORA,LOW,Cola de impresión atascada,Reiniciar cola de impresión;Verificar encendido;Revisar bandeja de papel
+"Impresora láser imprime con rayas oscuras",IMPRESORA,MEDIUM,Tóner defectuoso o fusor dañado,Reemplazar tóner;Limpiar rodillo de transferencia;Solicitar cambio de fusor
+"La impresora de red aparece como desconectada",IMPRESORA,MEDIUM,IP de la impresora cambiada o cable desconectado,Asignar IP estática;Verificar conexión física;Reinstalar driver
+"Impresora térmica emite pitidos y no imprime",IMPRESORA,LOW,Falta de papel o atasco interno,Cargar papel;Retirar papel atascado;Reiniciar impresora
+"Atasco de papel recurrente en la bandeja 2",IMPRESORA,LOW,Rodillos de tracción desgastados,Limpiar rodillos con alcohol isopropílico;Reemplazar kit de rodillos;Verificar tipo de papel
+"La impresora multifuncional no escanea a la carpeta compartida",IMPRESORA,MEDIUM,Credenciales de escaneo expiradas,Actualizar contraseña en libreta de direcciones;Verificar permisos de carpeta;Revisar conectividad SMB
+"Impresión muy lenta al enviar PDFs pesados",IMPRESORA,LOW,Falta de memoria en la impresora,Reducir resolución del documento;Actualizar firmware;Aumentar RAM del equipo
+"El escáner produce documentos en blanco",IMPRESORA,MEDIUM,Lámpara del escáner averiada,Reiniciar equipo;Actualizar controladores;Contactar soporte de hardware
+"El software contable muestra error de licencia expirada",SOFTWARE,HIGH,Servicio de licenciamiento no alcanza el servidor,Renovar archivo de licencia;Verificar conexión al servidor de licencias;Reiniciar servicio de licencia
+"Microsoft Office solicita activación constantemente",SOFTWARE,LOW,Caché de credenciales corrupto,Eliminar credenciales guardadas;Reparar instalación de Office;Reautenticar usuario
+"El ERP se cierra inesperadamente al generar reportes",SOFTWARE,MEDIUM,Falta de actualización o conflicto con antivirus,Instalar parche del ERP;Añadir exclusión al antivirus;Verificar registros de errores
+"No abre el programa de diseño gráfico",SOFTWARE,MEDIUM,Archivos de programa dañados,Reinstalar aplicación;Verificar requerimientos de hardware;Revisar visor de eventos
+"El sistema de nómina no calcula impuestos correctamente",SOFTWARE,HIGH,Falta actualización de tablas fiscales,Cargar actualización de parámetros;Verificar configuración regional;Reiniciar aplicativo
+"Aplicación web corporativa no carga en Chrome",SOFTWARE,MEDIUM,Caché corrupta o extensión conflictiva,Borrar caché del navegador;Deshabilitar extensiones;Probar en modo incógnito
+"Adobe Acrobat Reader se queda colgado al firmar",SOFTWARE,MEDIUM,Certificado digital inválido,Revisar almacén de certificados;Actualizar Adobe Reader;Reinstalar drivers de token
+"Cliente de VPN muestra error de tap-windows",SOFTWARE,MEDIUM,Driver de red virtual dañado,Reinstalar adaptador tap;Actualizar cliente VPN;Reiniciar equipo
+"La cámara IP no se visualiza en el sistema de monitoreo",VIDEOVIGILANCIA,MEDIUM,Cámara desconectada o IP inaccesible,Hacer ping a la cámara;Verificar inyector PoE;Reiniciar software VMS
+"El NVR dejó de grabar anoche",VIDEOVIGILANCIA,CRITICAL,Disco duro fallido o lleno,Verificar estado SMART del disco;Formatear disco;Reemplazar unidad de almacenamiento
+"Imagen con mucho ruido durante la noche en cámara exterior",VIDEOVIGILANCIA,LOW,Leds IR defectuosos o suciedad en lente,Limpiar domo;Verificar alimentación IR;Cambiar posición de la cámara
+"Desfase de hora en las grabaciones de seguridad",VIDEOVIGILANCIA,LOW,Sincronización NTP desactivada en NVR,Configurar servidor NTP;Forzar actualización de hora;Revisar zona horaria
+"Cámara PTZ no responde al control de movimiento",VIDEOVIGILANCIA,MEDIUM,Cable RS485 desconectado o falla mecánica,Verificar cableado de control;Reiniciar PTZ;Revisar configuración de protocolo baudrate
+"Alerta de movimiento no llega al correo",VIDEOVIGILANCIA,MEDIUM,Servidor SMTP mal configurado en cámara,Actualizar configuración de correo;Verificar puerto SMTP;Probar envío manual
+"Pantalla del centro de monitoreo en negro",VIDEOVIGILANCIA,HIGH,Falla en tarjeta de video del decodificador,Reiniciar decodificador;Verificar cables HDMI;Revisar software cliente
+"Cámaras de pasillo pierden señal intermitentemente",VIDEOVIGILANCIA,HIGH,Problema de voltaje en el switch PoE,Medir consumo PoE;Cambiar puerto del switch;Verificar cableado UTP
+"La base de datos no responde al iniciar la aplicación",BASE_DE_DATOS,CRITICAL,Servicio SQL Server detenido o base en modo sospechoso,Iniciar servicio de SQL;Ejecutar DBCC CHECKDB;Revisar log de errores
+"Consultas lentas en la tabla de facturación",BASE_DE_DATOS,HIGH,Falta de índices adecuados,Analizar plan de ejecución;Crear índice sugerido;Actualizar estadísticas
+"Error de timeout de conexión a la base de datos de producción",BASE_DE_DATOS,CRITICAL,Pool de conexiones saturado,Aumentar límite de conexiones;Cerrar conexiones huérfanas;Optimizar aplicación
+"El backup nocturno de PostgreSQL falló",BASE_DE_DATOS,HIGH,Falta de espacio en disco de respaldo,Liberar espacio en el storage;Eliminar backups antiguos;Revisar permisos de escritura
+"Deadlock detectado en la base de datos",BASE_DE_DATOS,MEDIUM,Transacciones bloqueándose mutuamente,Identificar sesión bloqueadora;Matar sesión problemática;Modificar lógica de la transacción
+"Error de espacio de logs de transacciones lleno",BASE_DE_DATOS,CRITICAL,Log de transacciones no se está vaciando,Ejecutar backup del log de transacciones;Cambiar modelo de recuperación temporalmente;Reducir archivo de log
+"No se pueden insertar registros por error de clave duplicada",BASE_DE_DATOS,MEDIUM,Secuencia de tabla desincronizada,Actualizar valor de la secuencia;Verificar registros insertados manualmente;Modificar constrain
+"La replicación de MySQL está retrasada",BASE_DE_DATOS,HIGH,Carga alta en el servidor principal,Revisar estado de threads;Optimizar consultas largas;Verificar latencia de red
+"Se detectaron varios intentos fallidos de acceso",SEGURIDAD,HIGH,Ataque de fuerza bruta o usuario bloqueado,Bloquear IP de origen;Desbloquear cuenta de usuario legítimo;Revisar logs de Active Directory
+"Antivirus reporta infección de ransomware en equipo de ventas",SEGURIDAD,CRITICAL,Malware descargado,Aislar equipo de la red;Ejecutar escaneo offline;Restaurar desde backup
+"Usuario reporta correo sospechoso pidiendo credenciales",SEGURIDAD,MEDIUM,Campaña de Phishing,Bloquear remitente en el antispam;Enviar alerta a usuarios;Cambiar contraseña del usuario si hizo clic
+"Alerta de exfiltración de datos en el firewall",SEGURIDAD,CRITICAL,Tráfico inusual hacia IP maliciosa,Bloquear regla de salida;Analizar equipo comprometido;Revisar logs de proxy
+"Certificado SSL de la página web expiró",SEGURIDAD,HIGH,Falta de renovación del certificado,Generar CSR;Instalar nuevo certificado;Reiniciar servidor web
+"Cuentas de VPN compartidas detectadas",SEGURIDAD,MEDIUM,Usuarios compartiendo accesos,Forzar autenticación multifactor (MFA);Deshabilitar cuentas compartidas;Auditar accesos
+"Alerta de intrusión IDS/IPS en segmento de servidores",SEGURIDAD,CRITICAL,Intento de explotación de vulnerabilidad,Actualizar parches del servidor;Bloquear IP atacante;Verificar reglas de IPS
+"Descarga de software no autorizado por parte de un empleado",SEGURIDAD,LOW,Políticas de control de aplicaciones deficientes,Desinstalar software;Aplicar política de AppLocker;Enviar amonestación
+"Mi laptop se apaga sola después de unos minutos",HARDWARE,HIGH,Sobrecalentamiento por suciedad en disipador,Limpiar ventiladores;Cambiar pasta térmica;Probar batería
+"Disco duro hace ruido metálico y no bootea",HARDWARE,CRITICAL,Falla mecánica en disco duro,Reemplazar disco duro por SSD;Recuperar información de backup;Reinstalar sistema operativo
+"Monitor parpadea y muestra colores distorsionados",HARDWARE,LOW,Cable de video dañado o tarjeta gráfica fallando,Cambiar cable HDMI/VGA;Actualizar driver de video;Reemplazar monitor
+"Teclado tiene varias teclas que no funcionan",HARDWARE,LOW,Derrame de líquido o daño físico,Reemplazar teclado;Limpiar contactos;Probar con teclado USB externo
+"La PC enciende pero no da video (pitidos largos)",HARDWARE,HIGH,Memoria RAM mal conectada o dañada,Limpiar contactos de RAM;Cambiar módulo de RAM;Verificar motherboard
+"Batería de laptop no retiene carga",HARDWARE,MEDIUM,Vida útil de batería agotada,Reemplazar batería;Verificar cargador;Actualizar BIOS
+"Puertos USB no reconocen ningún dispositivo",HARDWARE,MEDIUM,Controlador USB dañado o falla en placa base,Reinstalar drivers del chipset;Verificar configuración en BIOS;Usar hub externo temporal
+"La fuente de poder del servidor emite olor a quemado",HARDWARE,CRITICAL,Falla en componente eléctrico,Apagar equipo inmediatamente;Reemplazar fuente de poder;Revisar conexión a UPS
+"El correo corporativo no envía mensajes",CORREO,HIGH,IP en lista negra (blacklist),Verificar reputación de IP;Solicitar delistamiento;Revisar filtros de salida
+"Los correos externos entran directamente a la carpeta de Spam",CORREO,MEDIUM,Falta registro SPF o DKIM,Configurar SPF en DNS;Habilitar firma DKIM;Verificar DMARC
+"Buzón de correo lleno y no recibe más mensajes",CORREO,LOW,Cuota de almacenamiento excedida,Archivar correos antiguos (PST);Aumentar cuota temporalmente;Vaciar papelera
+"Outlook no se conecta a Microsoft 365",CORREO,MEDIUM,Falla de autenticación o perfil corrupto,Recrear perfil de Outlook;Verificar licenciamiento;Limpiar caché de credenciales
+"Error de rebote 550 Relaying Denied al enviar correo",CORREO,HIGH,Autenticación SMTP no configurada,Habilitar autenticación en cliente de correo;Revisar configuración de servidor;Verificar credenciales
+"Firma de correo no aparece automáticamente",CORREO,LOW,Firma desconfigurada,Volver a configurar firma en Outlook;Sincronizar políticas de firma;Revisar formato HTML
+"Correos con archivos adjuntos grandes son rechazados",CORREO,MEDIUM,Límite de tamaño superado,Sugerir uso de enlace de OneDrive;Aumentar límite de adjuntos en Exchange;Comprimir archivo
+"Reglas de bandeja de entrada no se ejecutan",CORREO,LOW,Reglas dañadas en servidor,Ejecutar Outlook con /cleanrules;Recrear regla manualmente;Verificar espacio en buzón
+"El sistema está demasiado lento desde la mañana",SISTEMA_LENTO,HIGH,Uso de CPU al 100% por proceso desconocido,Identificar proceso con Task Manager;Matar proceso;Escanear en busca de malware
+"Aplicación web corporativa demora mucho en cargar",SISTEMA_LENTO,HIGH,Servidor web saturado o base de datos lenta,Escalar recursos del servidor;Optimizar base de datos;Revisar caché
+"Windows tarda más de 5 minutos en iniciar",SISTEMA_LENTO,MEDIUM,Demasiados programas de inicio o disco HDD viejo,Deshabilitar programas de inicio;Actualizar a SSD;Limpiar registro
+"El explorador de archivos se congela al abrir carpetas en red",SISTEMA_LENTO,MEDIUM,Archivos sin indexar o conexión lenta,Reconstruir índice de búsqueda;Verificar velocidad de red;Desactivar vistas previas
+"Descargas muy lentas en toda la oficina",SISTEMA_LENTO,HIGH,Usuario saturando el ancho de banda,Monitorear consumo de firewall;Bloquear streaming;Aplicar ancho de banda equitativo
+"Base de datos de Access tarda en guardar registros",SISTEMA_LENTO,MEDIUM,Archivo MDB corrupto o muy grande,Compactar y reparar base de datos;Migrar a SQL Server;Verificar ruta de red
+"Software de diseño renderiza muy despacio",SISTEMA_LENTO,MEDIUM,Falta de aceleración gráfica,Activar renderizado por GPU;Actualizar drivers NVIDIA;Asignar más RAM a la aplicación
+"Los videos de capacitación se cortan continuamente",SISTEMA_LENTO,LOW,Saturación en el servidor de streaming interno,Reducir calidad de video;Verificar conectividad LAN;Distribuir carga de red
