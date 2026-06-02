@@ -1,0 +1,29 @@
+{
+  "project": "InfraHelp AI",
+  "model_type": "TF-IDF + Logistic Regression",
+  "trained_models": [
+    "category_classifier.joblib",
+    "priority_classifier.joblib"
+  ],
+  "total_records": 80,
+  "category_accuracy": 0.3125,
+  "priority_accuracy": 0.4375,
+  "categories": [
+    "REDES",
+    "WINDOWS_SERVER",
+    "IMPRESORA",
+    "SOFTWARE",
+    "VIDEOVIGILANCIA",
+    "BASE_DE_DATOS",
+    "SEGURIDAD",
+    "HARDWARE",
+    "CORREO",
+    "SISTEMA_LENTO"
+  ],
+  "priorities": [
+    "MEDIUM",
+    "HIGH",
+    "CRITICAL",
+    "LOW"
+  ]
+}

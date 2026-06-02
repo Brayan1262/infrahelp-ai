@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.api.dataset import router as dataset_router
+from app.api.ml import router as ml_router
 
 app = FastAPI(
     title="InfraHelp AI",
@@ -8,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(dataset_router)
+app.include_router(ml_router)
 
 @app.get("/")
 def read_root():
