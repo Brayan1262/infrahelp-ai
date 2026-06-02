@@ -1,0 +1,66 @@
+<div class="container-fluid p-0 fade-in-up">
+  <div class="card bg-glass border-0 shadow-lg rounded-4 mb-4">
+    <div class="card-body p-4 d-flex align-items-center">
+      <i class="bi bi-cpu text-success display-4 me-4"></i>
+      <div>
+        <h3 class="mb-1 text-light fw-bold">Estado de Modelos Scikit-learn</h3>
+        <p class="text-muted mb-0">Detalles técnicos del entrenamiento de IA con Machine Learning.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-5 mt-5" *ngIf="loading">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+  </div>
+
+  <div class="row g-4" *ngIf="!loading">
+    <div class="col-md-6">
+      <div class="card bg-dark-soft border-0 shadow-sm rounded-4 h-100">
+        <div class="card-header bg-transparent border-bottom border-secondary p-4">
+          <h5 class="mb-0 text-light"><i class="bi bi-server text-info me-2"></i> Estado de Archivos Joblib</h5>
+        </div>
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-file-earmark-binary fs-3 text-warning me-3"></i>
+            <div>
+              <h6 class="text-light mb-0">category_classifier.joblib</h6>
+              <small class="text-success" *ngIf="mlStatus?.models_available"><i class="bi bi-check-circle-fill"></i> Cargado y Activo</small>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-file-earmark-binary fs-3 text-warning me-3"></i>
+            <div>
+              <h6 class="text-light mb-0">priority_classifier.joblib</h6>
+              <small class="text-success" *ngIf="mlStatus?.models_available"><i class="bi bi-check-circle-fill"></i> Cargado y Activo</small>
+            </div>
+          </div>
+          <hr class="border-secondary my-4">
+          <h6 class="text-muted mb-3 fw-bold">Rendimiento Base</h6>
+          <p class="text-light-muted small">Los modelos utilizan TF-IDF Vectorization combinado con Logistic Regression para clasificar texto en lenguaje natural al idioma español.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card bg-dark-soft border-0 shadow-sm rounded-4 h-100">
+        <div class="card-header bg-transparent border-bottom border-secondary p-4">
+          <h5 class="mb-0 text-light"><i class="bi bi-database text-primary me-2"></i> Base de Conocimiento</h5>
+        </div>
+        <div class="card-body p-4">
+          <h1 class="display-3 fw-bold text-light mb-0">{{ datasetSummary?.total_records || 0 }}</h1>
+          <p class="text-muted">Tickets de Entrenamiento</p>
+          
+          <div class="mt-4 p-3 bg-glass rounded border border-secondary">
+            <h6 class="text-info fw-bold mb-2">Columnas Entrenadas:</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-secondary">description</span>
+              <span class="badge bg-secondary">category</span>
+              <span class="badge bg-secondary">priority</span>
+              <span class="badge bg-secondary">possible_cause</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

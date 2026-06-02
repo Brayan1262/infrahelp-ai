@@ -1,0 +1,89 @@
+<div class="login-wrapper">
+  <!-- Animated Background Bubbles -->
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="container h-100 d-flex justify-content-center align-items-center position-relative" style="z-index: 10;">
+    <div class="row w-100 shadow-lg rounded-5 overflow-hidden bg-glass-panel">
+      
+      <!-- Left Panel: Phrases -->
+      <div class="col-md-6 bg-gradient-primary p-5 text-white d-flex flex-column justify-content-center d-none d-md-flex">
+        <div class="mb-4">
+          <i class="bi bi-robot display-3 mb-3 d-block text-warning"></i>
+          <h1 class="display-5 fw-bold mb-3">InfraHelp AI</h1>
+          <p class="lead">Tu Plataforma Inteligente para Soporte TI e Infraestructura.</p>
+        </div>
+        
+        <div class="mt-4">
+          <div class="d-flex align-items-start mb-3">
+            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Clasificación Automática</h5>
+              <p class="text-white-50">Analiza incidencias técnicas con Inteligencia Artificial.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <i class="bi bi-lightning-charge-fill text-warning fs-4 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Priorización Inteligente</h5>
+              <p class="text-white-50">Asigna urgencia basada en el contexto del ticket.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start">
+            <i class="bi bi-magic text-info fs-4 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Pasos de Solución</h5>
+              <p class="text-white-50">Recibe recomendaciones exactas para reparar el problema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Login Form -->
+      <div class="col-md-6 p-5 bg-glass-form d-flex flex-column justify-content-center">
+        <div class="text-center d-md-none mb-4">
+          <i class="bi bi-robot display-3 text-primary mb-2 d-block"></i>
+          <h2 class="text-light fw-bold">InfraHelp AI</h2>
+        </div>
+        
+        <h3 class="mb-4 text-light fw-bold">Acceso de Administrador</h3>
+        
+        <div *ngIf="error" class="alert alert-danger shadow-sm border-0 d-flex align-items-center mb-4">
+          <i class="bi bi-exclamation-triangle-fill fs-5 me-3"></i>
+          <div>{{ error }}</div>
+        </div>
+
+        <form (ngSubmit)="doLogin()">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control custom-input bg-dark text-white border-secondary" id="usernameInput" [(ngModel)]="username" name="username" placeholder="Usuario" required>
+            <label for="usernameInput" class="text-muted"><i class="bi bi-person-fill"></i> Usuario</label>
+          </div>
+          
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control custom-input bg-dark text-white border-secondary" id="passwordInput" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+            <label for="passwordInput" class="text-muted"><i class="bi bi-lock-fill"></i> Contraseña</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold btn-glow text-white fs-5" [disabled]="!username || !password">
+            Ingresar al Dashboard <i class="bi bi-arrow-right ms-2"></i>
+          </button>
+        </form>
+        
+        <div class="mt-4 text-center">
+          <small class="text-muted">Desarrollado como proyecto profesional Full Stack.</small>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

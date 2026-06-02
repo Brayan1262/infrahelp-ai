@@ -1,0 +1,51 @@
+/* frontend/src/app/components/dashboard/history/history.css */
+.bg-glass { background-color: rgba(30, 41, 59, 0.7) !important; backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08) !important; }
+.bg-dark-soft { background-color: rgba(15, 23, 42, 0.6) !important; border: 1px solid rgba(255, 255, 255, 0.03); }
+.bg-orange { background-color: #f97316 !important; color: white; }
+
+.border-start-md {
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.history-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: slideInUp 0.5s ease-out both;
+}
+.history-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  background-color: rgba(30, 41, 59, 0.85) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4) !important;
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.delete-btn {
+  transition: all 0.2s;
+  opacity: 0.5;
+}
+.history-card:hover .delete-btn {
+  opacity: 1;
+}
+.delete-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .border-start-md { border-left: none !important; padding-left: 0 !important; }
+}

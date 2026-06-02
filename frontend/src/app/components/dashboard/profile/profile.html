@@ -1,0 +1,56 @@
+<div class="container-fluid p-0 fade-in-up">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      
+      <div class="card bg-glass border-0 shadow-lg rounded-4 mb-4">
+        <div class="card-header bg-transparent border-bottom border-secondary p-4">
+          <h4 class="mb-0 text-light fw-bold"><i class="bi bi-person-badge text-primary me-2"></i> Configuración de Perfil</h4>
+        </div>
+        
+        <div class="card-body p-5">
+          <div *ngIf="successMessage" class="alert alert-success bg-success-soft text-success border-success mb-4 d-flex align-items-center">
+            <i class="bi bi-check-circle-fill fs-4 me-3"></i> {{ successMessage }}
+          </div>
+
+          <form (ngSubmit)="saveProfile()">
+            
+            <div class="d-flex flex-column align-items-center mb-5 pb-4 border-bottom border-secondary">
+              <div class="position-relative mb-3 group-hover-edit">
+                <img [src]="profile.avatar" class="rounded-circle shadow-lg object-fit-cover border border-4 border-primary" width="150" height="150" alt="Avatar">
+                <label for="avatarUpload" class="edit-overlay d-flex align-items-center justify-content-center rounded-circle cursor-pointer">
+                  <i class="bi bi-camera-fill fs-2 text-white"></i>
+                </label>
+                <input type="file" id="avatarUpload" class="d-none" accept="image/*" (change)="handleImageUpload($event)">
+              </div>
+              <h5 class="text-light mb-1">{{ profile.name }}</h5>
+              <p class="text-muted mb-0">{{ profile.role }}</p>
+            </div>
+
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control custom-input bg-dark text-white border-secondary" id="nameInput" [(ngModel)]="profile.name" name="name" required>
+                  <label for="nameInput" class="text-muted">Nombre de Usuario</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control custom-input bg-dark text-white border-secondary" id="roleInput" [(ngModel)]="profile.role" name="role" required>
+                  <label for="roleInput" class="text-muted">Rol / Cargo</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary px-5 py-3 fw-bold rounded-3 btn-glow text-white">
+                <i class="bi bi-save me-2"></i> Guardar Cambios
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
