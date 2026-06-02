@@ -13,3 +13,18 @@ def analyze_endpoint(request: AnalyzeRequest):
         raise HTTPException(status_code=500, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error inesperado al procesar el ticket: {str(e)}")
+
+@router.get("/recommendations/categories")
+def get_categories():
+    return [
+        "REDES",
+        "WINDOWS_SERVER",
+        "IMPRESORA",
+        "SOFTWARE",
+        "VIDEOVIGILANCIA",
+        "BASE_DE_DATOS",
+        "SEGURIDAD",
+        "HARDWARE",
+        "CORREO",
+        "SISTEMA_LENTO"
+    ]
